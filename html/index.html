@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Skinnies Skincare</title>
+    <!-- Font Awesome CDN for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #f0c0c0;
+        }
+
+        nav ul li a i {
+            margin-right: 8px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #f0c0c0;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Products Section */
+        .products {
+            text-align: center;
+            padding: 50px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #000;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            font-size: 1.5rem;
+            color: #000;
+            margin-top: 15px;
+        }
+
+        .product p {
+            font-size: 1rem;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        /* Skincare Quiz Section */
+        .quiz {
+            background-color: #f0f0f0;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .quiz h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .quiz-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .quiz select {
+            padding: 10px;
+            font-size: 1rem;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .quiz button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quiz button:hover {
+            background-color: #f0c0c0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0c0c0;
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+                padding: 0 20px;
+            }
+
+            .product-list {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .product {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .products h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#profile"><i class="fas fa-user"></i>Profile</a></li>
+            <li><a href="#cart"><i class="fas fa-shopping-cart"></i>Cart</a></li>
+            <li><a href="#shipping"><i class="fas fa-truck"></i>Shipping</a></li>
+            <li><a href="#quiz"><i class="fas fa-question-circle"></i>Skincare Quiz</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <img src="hero image.webp" alt="A woman applying skincare products" class="hero-image">
+        <div class="hero-text">
+            <h1>Skinnies</h1>
+            <p>Beauty starts with skincare. Pure. Simple. Effective.</p>
+        </div>
+    </header>
+
+    <!-- Product Section -->
+    <section class="products">
+        <h2>Our Products</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="serum.jpg" alt="Hydrating Serum Bottle">
+                <h3>Hydrating Serum</h3>
+                <p>A deeply hydrating serum that leaves your skin feeling refreshed.</p>
+            </div>
+            <div class="product">
+                <img src="moisturiser.webp" alt="Soothing Moisturizer Bottle">
+                <h3>Soothing Moisturizer</h3>
+                <p>Calms and nourishes the skin for all-day hydration.</p>
+            </div>
+            <div class="product">
+                <img src="face mask.webp" alt="Brightening Face Mask">
+                <h3>Brightening Face Mask</h3>
+                <p>Reveals a radiant complexion with our brightening formula.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skincare Quiz Section -->
+    <section class="quiz" id="quiz">
+        <h2>Take Our Skincare Quiz</h2>
+        <div class="quiz-form">
+            <form>
+                <label for="skin-type">What is your skin type?</label>
+                <select id="skin-type" name="skin-type">
+                    <option value="dry">Dry</option>
+                    <option value="oily">Oily</option>
+                    <option value="combination">Combination</option>
+                    <option value="sensitive">Sensitive</option>
+                </select>
+
+                <label for="concern">What is your primary skincare concern?</label>
+                <select id="concern" name="concern">
+                    <option value="acne">Acne</option>
+                    <option value="wrinkles">Wrinkles</option>
+                    <option value="dryness">Dryness</option>
+                    <option value="redness">Redness</option>
+                </select>
+
+                <button type="submit">Get Recommendations</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Skinnies. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
